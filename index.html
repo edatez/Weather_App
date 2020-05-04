@@ -1,11 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="Assets\css\style.css" />
+    <title>Weather Dashboard</title>
 </head>
+
 <body>
+
+    <body>
+
+        <!-- Main Bootstrap Search for Cities -->
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <i class="material-icons"></i>Weather Dashboard</i>&nbsp;</a>
+        </nav>
     
-</body>
+        <div class="container-fluid">
+            <div class="row mt-3">
+                <div class="col-md-3 searcharea">
+                    <h2 class="text-secondary">Search for a city:</h2>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="searchinput" type="search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" id="searchbtn" type="submit">
+                                <i class="material-icons">search</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-5" id="prevSearches">
+                        <!--Buttons for previous searches here-->
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="container" id="earthforecast">
+                        <!--Weather for current location-->
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+            
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <br>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Austin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Chicago</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New York</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Orlando</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">San Francisco</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Seattle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Denver</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Atlanta</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+       
+
+
+
+
+        <!-- Footer Region -->
+        <div class="row">
+            <div class="col-sm-12">
+
+                <!-- Line Break followed by closing -->
+                <hr>
+                <h5 class="text-center"><small>Made by Eda <i class="footer"></i></small></h5>
+
+            </div>
+        </div>
+
+        </div>
+
+        <!-- jQuery JS -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+
+        <!-- Code to the JavaScript File -->
+        <script src="Assets\script.js"></script>
+
+
+
+
+
+    </body>
+
 </html>
