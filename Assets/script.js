@@ -56,7 +56,7 @@ function searchCity(city) {
          <p class="card-text">Temperature: ${response.main.temp}°F</p>
          <p class="card-text">Humidity: ${response.main.humidity}%</p>  
          <p class="card-text">Wind Speed: ${response.wind.speed}mph</p>
-         <p class="card-text">UV Index:${response.wind.speed}mph</p>
+         <p class="card-text">UV Index:${response.wind.speed} mph</p>
 
       
        </div>
