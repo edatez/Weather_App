@@ -1,5 +1,6 @@
 var apiId = "e9885f935a30d807d367fb450e9d819f";
 var currentDate = new Date().toLocaleDateString()
+var weatherIcon;
 console.log(currentDate)
 var city=""
 // read localstorage and build the list of the history 
@@ -43,6 +44,10 @@ function searchCity(city) {
     console.log(response);
     calculateUV(response)
  
+    weatherIcon=response.weather[0].icon 
+    console.log(weatherIcon);
+
+
   });
 }
 // If you split first with space. The first part of the array will be the day. Then you split the first part with ‘-‘ Then you can get every piece and create a string with the format you want
@@ -66,8 +71,8 @@ function calculateUV(response) {
 
     var card = `<div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">${response.name}</h5>
-
+    <h5 class="card-title">${response.name} </h5>
+    <img>"https://openweathermap.org/img/wn/"+ ${weatherIcon} +"@2x.png"</img>
     <p class="card-text">Temperature: ${response.main.temp}°F</p>
     <p class="card-text">Humidity: ${response.main.humidity}%</p>  
     <p class="card-text">Wind Speed: ${response.wind.speed}mph</p>
@@ -77,6 +82,7 @@ function calculateUV(response) {
     $("#current").empty()
     $("#current").append(card);
     forecast(response.name)
+    console.log(`https://openweathermap.org/img/wn/`+weatherIcon+`@2x.png`)
   })
 }
 
