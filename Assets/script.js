@@ -55,9 +55,9 @@ function calculateUV(response) {
     appid: apiId,
     lat: response.coord.lat,
     lon: response.coord.lon
- 
+
   })
-  weatherIcon=response.weather[0].icon 
+  weatherIcon = response.weather[0].icon
   console.log(weatherIcon);
   var queryUrl = "https://api.openweathermap.org/data/2.5/uvi?" + queryParams
   $.ajax({
@@ -69,7 +69,7 @@ function calculateUV(response) {
 
     var card = `<div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">${response.name} </h5>
+    <h5 class="card-title">${response.name}</h5>
     <img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png">
     <p class="card-text">Temperature: ${response.main.temp}°F</p>
     <p class="card-text">Humidity: ${response.main.humidity}%</p>  
@@ -108,11 +108,11 @@ function forecast(city) {
         var d = splitDate[2];
         var y = splitDate[0];
 
-
         var card = `<div class="card col" style="width: 18rem;">
      <div class="card-body"  id="forecast">
        <h5 class="card-title"></h5>
-       <h6 class="card-subtitle mb-2 text-muted">${month}\\${d}\\${y}</h6>
+       <h6 class="card-subtitle mb-2 text-muted" style="font-size:15px; ">${month}\\${d}\\${y}</h6>
+        <img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png">
        <p class="card-text">Temp:${day.main.temp}°F</p>
        <p class="card-text">Humidity: ${day.main.humidity}%</p> 
      </div>
