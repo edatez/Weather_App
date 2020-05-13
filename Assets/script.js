@@ -2,7 +2,7 @@ var apiId = "e9885f935a30d807d367fb450e9d819f";
 var currentDate = new Date().toLocaleDateString()
 var weatherIcon;
 console.log(currentDate)
-var city=""
+var city = ""
 // read localstorage and build the list of the history 
 /*creating an array to the search city name, making a variable*/
 var citiesStore = JSON.parse(localStorage.getItem('weatherByCity'));
@@ -43,16 +43,11 @@ function searchCity(city) {
   }).then(function (response) {
     console.log(response);
     calculateUV(response)
- 
-    weatherIcon=response.weather[0].icon 
-    console.log(weatherIcon);
-
 
   });
 }
 // If you split first with space. The first part of the array will be the day. Then you split the first part with ‘-‘ Then you can get every piece and create a string with the format you want
 // Server Interaction -getting 5day forecast for the city entered.
-// // //  ToDos: eliminate the year at the forecast, for temps-change kelvin to F.Add a sun icon.
 // if you put :  &units=imperial in the query url the units will be in imperial units and you won't have to run a kelvin to imperial calculation
 
 function calculateUV(response) {
@@ -60,7 +55,10 @@ function calculateUV(response) {
     appid: apiId,
     lat: response.coord.lat,
     lon: response.coord.lon
+ 
   })
+  weatherIcon=response.weather[0].icon 
+  console.log(weatherIcon);
   var queryUrl = "https://api.openweathermap.org/data/2.5/uvi?" + queryParams
   $.ajax({
     url: queryUrl,
@@ -72,7 +70,7 @@ function calculateUV(response) {
     var card = `<div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">${response.name} </h5>
-    <img>"https://openweathermap.org/img/wn/"+ ${weatherIcon} +"@2x.png"</img>
+    <img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png">
     <p class="card-text">Temperature: ${response.main.temp}°F</p>
     <p class="card-text">Humidity: ${response.main.humidity}%</p>  
     <p class="card-text">Wind Speed: ${response.wind.speed}mph</p>
@@ -82,19 +80,19 @@ function calculateUV(response) {
     $("#current").empty()
     $("#current").append(card);
     forecast(response.name)
-    console.log(`https://openweathermap.org/img/wn/`+weatherIcon+`@2x.png`)
+    console.log("https://openweathermap.org/img/wn/${weatherIcon}@2x.png");
   })
 }
 
 function forecast(city) {
   var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiId}&units=imperial`
+  // if you put :  &units=imperial in the query url the units will be in imperial units and you won't have to run a kelvin to imperial calculation
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function (response) {
     console.log(response);
-    // // //  ToDos: add the icons, uvi
-    // if you put :  &units=imperial in the query url the units will be in imperial units and you won't have to run a kelvin to imperial calculation
+
 
     $("#forecast").empty();
     for (var i = 0; i < response.list.length; i++) {
