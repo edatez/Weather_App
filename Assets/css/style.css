@@ -5,7 +5,13 @@ color:white;
 border:1px solid white;
 
 }
-
+h1, p {
+    text-align: center;
+}
+.jumbotron{
+    background-color:rgb(52, 52, 54);
+    color:white
+}
 #history{
     margin-top: 20px;
 

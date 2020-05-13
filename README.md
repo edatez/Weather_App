@@ -7,6 +7,7 @@ Used the [OpenWeather API](https://openweathermap.org/api) to retrieve weather d
 Here is a screenshot from the application:
 ![weather dashboard screenshot](./Assets/images/screenshot.png)
 
+
 ## User Story:
 
 AS A traveler
@@ -30,8 +31,6 @@ THEN I am again presented with current and future conditions for that city
 WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
 
-Here is a screenshot from the application:
-![weather dashboard screenshot](./Assets/images/screenshot.png)
 
 And a little demo: 
 ![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
