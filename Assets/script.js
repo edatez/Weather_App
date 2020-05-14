@@ -67,7 +67,7 @@ function calculateUV(response) {
   }).then(function (uvData) {
     console.log(uvData)
 
-    var card = `<div class="card" style="width: 18rem;">
+    var card = `<div class="card" style="width: 46rem;">
   <div class="card-body">
     <h5 class="card-title">${response.name}</h5>
     <img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png">
@@ -108,10 +108,10 @@ function forecast(city) {
         var y = splitDate[0];
         console.log(day.weather[0].icon)
 
-        var card = `<div class="card col" style="width: 18rem;">
+        var card = `<div class="card col" style="width:18rem;">
      <div class="card-body"  id="forecast">
        <h5 class="card-title"></h5>
-       <h6 class="card-subtitle mb-2 text-muted" style="font-size:15px; ">${month}\\${d}\\${y}</h6>
+       <h6 class="card-subtitle mb-2 text-muted" style="font-size:15px; text-align:left">${month}\\${d}\\${y}</h6>
         <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png">
        <p class="card-text">Temp:${day.main.temp}°F</p>
        <p class="card-text">Humidity: ${day.main.humidity}%</p> 

@@ -1,16 +1,19 @@
 .cityHistory{
-background-color: rgb(10, 120, 246);
+background-color: rgb(244, 246, 248);
 font-size:16px;
-color:white;
+color:rgb(59, 59, 59);
 border:1px solid white;
 
 }
-h1, p {
+h1 {
+    text-align: center;
+}
+.lead {
     text-align: center;
 }
 .jumbotron{
     background-color:rgb(52, 52, 54);
-    color:white
+    color:white;
 }
 #history{
     margin-top: 20px;
@@ -18,4 +21,5 @@ h1, p {
 }
 #forecast{
   font-size: small;
+  
 }
