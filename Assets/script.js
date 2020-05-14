@@ -97,8 +97,7 @@ function forecast(city) {
     $("#forecast").empty();
     for (var i = 0; i < response.list.length; i++) {
       let day = response.list[i]
-      console.log(day);
-      if (day.dt_txt.includes("12:00:00")) {
+        if (day.dt_txt.includes("12:00:00")) {
         // showing the info in the forcecast area-picking here one of them because it gives couple other choices with different times, so I picked 12:00
         //looping and creating 5 cards
         var date = day.dt_txt.split(" ");
@@ -107,12 +106,13 @@ function forecast(city) {
         var month = splitDate[1];
         var d = splitDate[2];
         var y = splitDate[0];
+        console.log(day.weather[0].icon)
 
         var card = `<div class="card col" style="width: 18rem;">
      <div class="card-body"  id="forecast">
        <h5 class="card-title"></h5>
        <h6 class="card-subtitle mb-2 text-muted" style="font-size:15px; ">${month}\\${d}\\${y}</h6>
-        <img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png">
+        <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png">
        <p class="card-text">Temp:${day.main.temp}°F</p>
        <p class="card-text">Humidity: ${day.main.humidity}%</p> 
      </div>
