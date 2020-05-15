@@ -1,6 +1,7 @@
 # Weather Dashboard
 
 This is a simple application to get the current wether and 5 day forecast...
+https://edatez.github.io/Weather_App/
 
 Used the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities and `localStorage` to store any persistent data.
 
