@@ -34,5 +34,5 @@ THEN I am presented with the last searched city forecast
 
 
 And a little demo: 
-![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
+![weather dashboard demo](./Assets/images/06-server-side-apis-homework-demo.png)
 
