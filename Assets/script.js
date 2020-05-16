@@ -1,7 +1,6 @@
 var apiId = "e9885f935a30d807d367fb450e9d819f";
-var currentDate = new Date().toLocaleDateString()
+var currentDate = new Date().toLocaleDateString();
 var weatherIcon;
-console.log(currentDate)
 var city = ""
 // read localstorage and build the list of the history 
 /*creating an array to the search city name, making a variable*/
@@ -12,13 +11,7 @@ if (!citiesStore) {
 }
 
 renderHistory()
-// Fetch the City
-// Display the City
 // Getting weather for searched city. 
-
-//  .attr("src", weatherImg)
-
-
 function renderHistory() {
   $("#history").empty()
   for (key in citiesStore) {
@@ -67,9 +60,11 @@ function calculateUV(response) {
   }).then(function (uvData) {
     console.log(uvData)
 
+ // concatenate strings  
+
     var card = `<div class="card" style="width: 46rem;">
   <div class="card-body">
-    <h5 class="card-title">${response.name}</h5>
+    <h5 class="card-title">${response.name}  ${currentDate}</h5>
     <img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png">
     <p class="card-text">Temperature: ${response.main.temp}°F</p>
     <p class="card-text">Humidity: ${response.main.humidity}%</p>  
